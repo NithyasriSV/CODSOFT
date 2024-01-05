@@ -1,0 +1,96 @@
++*In[1]:*+
+[source, ipython3]
+----
+##### simple calculator
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    return x / y
+
+def exponents(x,y):
+    return  x**y
+
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+print("5.Exponential")
+while True:
+    choice = input("Enter choice(1/2/3/4/5): ")
+    if choice in ('1', '2', '3', '4','5'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+        
+        elif choice == '5':
+            print(num1,"**", num2, "=", exponents(num1, num2))
+            
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+    else:
+        print("Invalid Input")
+
+----
+
+
++*Out[1]:*+
+----
+Select operation.
+1.Add
+2.Subtract
+3.Multiply
+4.Divide
+5.Exponential
+Enter choice(1/2/3/4/5): 5
+Enter first number: 2
+Enter second number: 2
+2.0 ** 2.0 = 4.0
+Let's do next calculation? (yes/no): yes
+Enter choice(1/2/3/4/5): 3
+Enter first number: 123
+Enter second number: 456
+123.0 * 456.0 = 56088.0
+Let's do next calculation? (yes/no): yes
+Enter choice(1/2/3/4/5): 2
+Enter first number: 45
+Enter second number: 78
+45.0 - 78.0 = -33.0
+Let's do next calculation? (yes/no): yes
+Enter choice(1/2/3/4/5): 4
+Enter first number: 77
+Enter second number: 11
+77.0 / 11.0 = 7.0
+Let's do next calculation? (yes/no): no
+----
+
+
++*In[ ]:*+
+[source, ipython3]
+----
+
+----
